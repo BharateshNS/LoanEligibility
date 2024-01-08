@@ -1,4 +1,4 @@
-# LoanEligibility
+# Loan Eligibility
 
 ### Software And Tools Requirements
 
