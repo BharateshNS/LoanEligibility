@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility Prediction - Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b4e1e8; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #0a0707d9;
+            margin-bottom: 8px;
+            font-size: 2.2em;
+        }
+        h3 {
+            text-align: center;
+            color: #0a0707d9; 
+            font-size: 1.9em;
+        }
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: #fafad2; /* LightGoldenRodYellow */
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #cd853f; /* Peru */
+        }
+        th {
+            background-color: #f5f5dc; /* Beige */
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #23ca29; /* Green */
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker shade of Green */
+        }
+    </style>
+</head>
+<body>
+    <h3>Loan Eligibility Prediction Result: 
+        <span style="color: {% if result == 'Yes you can Apply' %} green{% else %}red{% endif %};">
+            {{ result }}        
+        </span>
+    </h3>
+
+    <!-- Display the original form values in a table -->
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>{{ form_values['gender'] }}</td>
+        </tr>
+        <tr>
+            <td>Married</td>
+            <td>{{ form_values['married'] }}</td>
+        </tr>
+        <tr>
+            <td>Dependents</td>
+            <td>{{ form_values['dependents'] }}</td>
+        </tr>
+        <tr>
+            <td>Education</td>
+            <td>{{ form_values['education'] }}</td>
+        </tr>
+        <tr>
+            <td>Self Employed</td>
+            <td>{{ form_values['self_employed'] }}</td>
+        </tr>
+        <tr>
+            <td>Applicant Income</td>
+            <td>{{ form_values['applicant_income'] }}</td>
+        </tr>
+        <tr>
+            <td>Coapplicant Income</td>
+            <td>{{ form_values['coapplicant_income'] }}</td>
+        </tr>
+        <tr>
+            <td>Loan Amount</td>
+            <td>{{ form_values['loan_amount'] }}</td>
+        </tr>
+        <tr>
+            <td>Loan Amount Term</td>
+            <td>{{ form_values['loan_amount_term'] }}</td>
+        </tr>
+        <tr>
+            <td>Credit Card</td>
+            <td>{{ form_values['credit_card'] }}</td>
+        </tr>
+    </table>
+
+    <!-- Add a button to go back to the home page -->
+    <div class="button-container">
+        <a href="/home">
+            <button>Go Back Home</button>
+        </a>
+    </div>
+</body>
+</html>
